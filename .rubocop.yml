@@ -1,0 +1,83 @@
+inherit_from: .rubocop_todo.yml
+
+plugins:
+  - rubocop-packaging
+  - rubocop-performance
+  - rubocop-minitest
+
+AllCops:
+  DisabledByDefault: true
+  NewCops: enable
+  SuggestExtensions: false
+  TargetRubyVersion: 2.6
+  DisplayStyleGuide: true
+  ExtraDetails: true
+  Exclude:
+    - .git/**/*
+    - .github/**/*
+    - docs/**/*
+    - examples/**/*
+    - tmp/**/*
+    - vendor/**/*
+
+Gemspec:
+  Enabled: true
+
+Layout:
+  Enabled: true
+
+Layout/CommentIndentation:
+  AllowForAlignment: true
+
+Layout/ExtraSpacing:
+  AllowBeforeTrailingComments: true
+
+Lint:
+  Enabled: true
+
+Lint/SuppressedException:
+  Exclude:
+    - 'test/**/*'
+
+Minitest:
+  Enabled: true
+
+Minitest/RefuteFalse:
+  Enabled: false
+
+Naming:
+  Enabled: true
+
+Naming/PredicateMethod:
+  Exclude:
+    - 'test/**/*'
+
+Packaging:
+  Enabled: true
+
+Performance:
+  Enabled: true
+
+Security:
+  Enabled: true
+
+Style:
+  Enabled: true
+
+# Disabled for performance.
+Style/ComparableBetween:
+  Enabled: false
+
+# Disabled for performance. Reconsider when dropping Ruby < 3.4 support
+Style/MultipleComparison:
+  Enabled: false
+
+Style/NumericLiterals:
+  Exclude:
+    - 'lib/**/*'
+
+Style/NumericPredicate:
+  EnforcedStyle: comparison
+
+Style/SafeNavigationChainLength:
+  Max: 5
