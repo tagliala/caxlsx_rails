@@ -35,7 +35,7 @@ ActionController::Renderers.add :xlsx do |filename, options|
   # disposition / filename
   disposition = options.delete(:disposition) || 'attachment'
   file_name = options.delete(:filename) || "#{filename.gsub(%r{^.*/}, '')}.xlsx"
-  file_name = "#{file_name}.xlsx" unless file_name =~ /\.xlsx$/
+  file_name = "#{file_name}.xlsx" unless /\.xlsx$/.match?(file_name)
 
   # alternate settings
   options[:locals] ||= {}
