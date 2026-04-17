@@ -1,7 +1,6 @@
 ENV["RAILS_ENV"] ||= "test"
 
 # Set up bundle to use gems
-require 'bundler/setup'
 Bundler.setup
 
 # Require Rails
